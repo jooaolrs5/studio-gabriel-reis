@@ -1,5 +1,5 @@
 import { Instagram, MapPin, Phone } from "lucide-react";
-import { WA, IG } from "@/lib/constants";
+import { WA, IG, MAPS } from "@/lib/constants";
 
 const navLinks = [
   ["#sobre", "Sobre o Studio"],
@@ -37,8 +37,12 @@ export function FooterSection() {
         <div className="space-y-4">
           <h4 className="font-bold text-sm tracking-wide">Contato</h4>
           <ul className="space-y-3 text-sm text-secondary-foreground">
-            <li className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-primary flex-shrink-0" /> São Luís, MA
+            <li>
+              <a href={MAPS} target="_blank" rel="noopener noreferrer"
+                className="flex items-start gap-2 hover:text-primary transition-colors">
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>Calhau, São Luís — MA</span>
+              </a>
             </li>
             <li>
               <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
