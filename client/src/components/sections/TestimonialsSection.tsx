@@ -7,6 +7,12 @@ import { fadeUp } from "@/components/shared/motion";
 
 const testimonials = [
   {
+    name: "Mayra Messa",
+    role: "Aluna · Studio Gabriel Reis",
+    stars: 5,
+    text: "Cuidou e cuida muito bem de mim, principalmente depois da lesão. Já me recuperei 100% — padrão GR é outro nível. Estão de parabéns, super indico! 👏👏👏",
+  },
+  {
     name: "Claudio Josan",
     role: "Aluno · Studio Gabriel Reis",
     stars: 5,
@@ -19,8 +25,8 @@ const testimonials = [
     text: "Excelente local para atividades físicas!!! Equipe preparada, atendimento personalizado com foco em desenvolvimento da performance e prevenção de lesões. Atendimento show!!! Super indico.",
   },
   {
-    name: "Aluna do Studio",
-    role: "Recuperação pós-lesão",
+    name: "Roseanny Ferreira",
+    role: "Aluna · Recuperação pós-lesão",
     stars: 5,
     text: "A melhor possível; excelente acompanhamento; satisfeita com minha evolução, pós lesão de tornozelo. Parabéns 👏🏽 Gabriel Reis…",
   },
@@ -62,7 +68,7 @@ export function TestimonialsSection() {
         </AnimatedSection>
 
         {/* Depoimentos em grid 2x2 */}
-        <div className="grid md:grid-cols-2 gap-6 mb-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
           {testimonials.map(({ name, role, stars, text }) => (
             <AnimatedSection key={name}>
               <motion.div variants={fadeUp} className="p-8 rounded-2xl border border-border bg-card h-full flex flex-col gap-5 hover:border-primary/30 transition-all">
