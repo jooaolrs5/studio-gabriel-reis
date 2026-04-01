@@ -19,7 +19,7 @@ export function FooterSection() {
           <img
             src="/images/logo-white.png"
             alt="Studio Gabriel Reis - Alta Performance e Prevenção de Lesões"
-            className="h-12 w-auto object-contain"
+            className="h-20 w-auto object-contain"
           />
           <p className="text-secondary-foreground text-sm leading-relaxed max-w-xs">
             Studio Gabriel Reis - Alta Performance e Prevenção de Lesões. Centro especializado em São Luís, MA.

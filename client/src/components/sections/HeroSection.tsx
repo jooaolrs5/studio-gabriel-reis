@@ -20,6 +20,15 @@ export function HeroSection() {
       <div className="container relative z-10 pt-28 pb-20">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl space-y-7">
 
+          {/* Logo em destaque no hero */}
+          <motion.div variants={fadeUp}>
+            <img
+              src="/images/logo-white.png"
+              alt="Studio Gabriel Reis"
+              className="h-16 md:h-20 w-auto object-contain"
+            />
+          </motion.div>
+
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-primary text-xs font-bold tracking-[0.18em] uppercase">Performance Elite · São Luís, MA</span>
