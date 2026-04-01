@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Tag } from "lucide-react";
 import { useState } from "react";
-import { WA } from "@/lib/constants";
+import { WA, WA_SC } from "@/lib/constants";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Label } from "@/components/shared/Label";
 import { fadeUp } from "@/components/shared/motion";
@@ -155,7 +155,7 @@ export function PricingSection() {
                         <p className="text-2xl font-black">{price}</p>
                         {total && <p className="text-xs text-secondary-foreground mt-1">{total}</p>}
                       </div>
-                      <a href={WA} target="_blank" rel="noopener noreferrer"
+                      <a href={WA_SC} target="_blank" rel="noopener noreferrer"
                         className={`mt-auto w-full h-10 rounded-lg text-xs font-bold inline-flex items-center justify-center gap-1.5 transition-all ${isAnual ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"}`}>
                         <WaIcon size={3} /> Quero esse plano
                       </a>

@@ -6,9 +6,30 @@ import { Label } from "@/components/shared/Label";
 import { fadeUp } from "@/components/shared/motion";
 
 const testimonials = [
-  { name: "João V.", role: "Empresário, 38 anos", text: "Cinco anos em academia sem resultado consistente. Em três meses no Studio, entendi o que é treino com método. A diferença é absurda." },
-  { name: "Ana C.", role: "Corredora amadora, 32 anos", text: "Lesão no joelho que me afastou do esporte por 6 meses. Aqui recuperei com segurança, voltei a correr e estou mais forte do que antes." },
-  { name: "Rafael M.", role: "Atleta, 27 anos", text: "Evoluí mais em 2 meses aqui do que em 1 ano treinando sozinho. A avaliação inicial já mostrou onde estavam meus gargalos." },
+  {
+    name: "Claudio Josan",
+    role: "Aluno · Studio Gabriel Reis",
+    stars: 5,
+    text: "Bom atendimento! Equipe bem preparada e focada para melhor desenvolver a performance do aluno!! Parabéns a equipe GR pelo excelente trabalho!!",
+  },
+  {
+    name: "Gabriela Farias",
+    role: "Local Guide · Google Maps",
+    stars: 5,
+    text: "Excelente local para atividades físicas!!! Equipe preparada, atendimento personalizado com foco em desenvolvimento da performance e prevenção de lesões. Atendimento show!!! Super indico.",
+  },
+  {
+    name: "Aluna do Studio",
+    role: "Recuperação pós-lesão",
+    stars: 5,
+    text: "A melhor possível; excelente acompanhamento; satisfeita com minha evolução, pós lesão de tornozelo. Parabéns 👏🏽 Gabriel Reis…",
+  },
+  {
+    name: "Letícia Leite",
+    role: "Aluna · Studio Gabriel Reis",
+    stars: 5,
+    text: "Profissionais excelentes!! Saí do sedentarismo graças ao Studio Gabriel Reis e aos professores incríveis.",
+  },
 ];
 
 export function TestimonialsSection() {
@@ -16,11 +37,10 @@ export function TestimonialsSection() {
     <section id="resultados" className="py-20 md:py-32 border-t border-border bg-secondary/10">
       <div className="container">
 
-        {/* Cabeçalho com rating em destaque */}
         <AnimatedSection className="text-center mb-14">
           <motion.div variants={fadeUp}><Label text="Prova Social" /></motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-6">
-            Resultados reais de pessoas que<br />decidiram treinar com método
+            Resultados reais de quem<br />decidiu treinar com método
           </motion.h2>
 
           {/* Badge 5 estrelas Google */}
@@ -31,7 +51,7 @@ export function TestimonialsSection() {
             </div>
             <div className="text-left">
               <div className="font-black text-lg leading-none">5.0</div>
-              <div className="text-xs text-secondary-foreground">no Google</div>
+              <div className="text-xs text-secondary-foreground">Google Maps</div>
             </div>
             <div className="w-px h-8 bg-border" />
             <a href={MAPS} target="_blank" rel="noopener noreferrer"
@@ -41,17 +61,17 @@ export function TestimonialsSection() {
           </motion.div>
         </AnimatedSection>
 
-        {/* Depoimentos */}
-        <div className="grid md:grid-cols-3 gap-6 mb-14">
-          {testimonials.map(({ name, role, text }) => (
+        {/* Depoimentos em grid 2x2 */}
+        <div className="grid md:grid-cols-2 gap-6 mb-14">
+          {testimonials.map(({ name, role, stars, text }) => (
             <AnimatedSection key={name}>
-              <motion.div variants={fadeUp} className="p-8 rounded-2xl border border-border bg-card h-full flex flex-col gap-5">
+              <motion.div variants={fadeUp} className="p-8 rounded-2xl border border-border bg-card h-full flex flex-col gap-5 hover:border-primary/30 transition-all">
                 <div className="flex gap-0.5">
-                  {Array(5).fill(0).map((_, i) => <Star key={i} className="w-4 h-4 text-primary fill-primary" />)}
+                  {Array(stars).fill(0).map((_, i) => <Star key={i} className="w-4 h-4 text-primary fill-primary" />)}
                 </div>
-                <p className="text-secondary-foreground leading-relaxed flex-1 italic text-sm">"{text}"</p>
+                <p className="text-secondary-foreground leading-relaxed flex-1 text-sm">"{text}"</p>
                 <div className="flex items-center gap-3 pt-3 border-t border-border">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                     <span className="text-primary font-black text-sm">{name[0]}</span>
                   </div>
                   <div>
