@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Instagram, Star } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, Instagram, Quote, Star } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 import { IG, MAPS } from "@/lib/constants";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Label } from "@/components/shared/Label";
@@ -38,7 +39,28 @@ const testimonials = [
   },
 ];
 
+const variants = {
+  enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),
+  center: { opacity: 1, x: 0 },
+  exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60 }),
+};
+
 export function TestimonialsSection() {
+  const [[idx, dir], setPage] = useState([0, 0]);
+  const [paused, setPaused] = useState(false);
+
+  const go = useCallback((newDir: number) => {
+    setPage(([cur]) => [(cur + newDir + testimonials.length) % testimonials.length, newDir]);
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => go(1), 5000);
+    return () => clearInterval(t);
+  }, [paused, go]);
+
+  const t = testimonials[idx];
+
   return (
     <section id="resultados" className="py-20 md:py-32 border-t border-border bg-secondary/10">
       <div className="container">
@@ -49,7 +71,6 @@ export function TestimonialsSection() {
             Resultados reais de quem<br />decidiu treinar com método
           </motion.h2>
 
-          {/* Badge 5 estrelas Google */}
           <motion.div variants={fadeUp}
             className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-card border border-border">
             <div className="flex gap-0.5">
@@ -67,31 +88,87 @@ export function TestimonialsSection() {
           </motion.div>
         </AnimatedSection>
 
-        {/* Depoimentos em grid 2x2 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
-          {testimonials.map(({ name, role, stars, text }) => (
-            <AnimatedSection key={name}>
-              <motion.div variants={fadeUp} className="p-8 rounded-2xl border border-border bg-card h-full flex flex-col gap-5 hover:border-primary/30 transition-all">
-                <div className="flex gap-0.5">
-                  {Array(stars).fill(0).map((_, i) => <Star key={i} className="w-4 h-4 text-primary fill-primary" />)}
-                </div>
-                <p className="text-secondary-foreground leading-relaxed flex-1 text-sm">"{text}"</p>
-                <div className="flex items-center gap-3 pt-3 border-t border-border">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary font-black text-sm">{name[0]}</span>
+        {/* Carrossel */}
+        <AnimatedSection>
+          <motion.div variants={fadeUp}
+            className="relative max-w-3xl mx-auto"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            {/* Card */}
+            <div className="overflow-hidden rounded-2xl border border-border bg-card px-8 md:px-16 py-12 min-h-[280px] flex flex-col justify-between">
+              <AnimatePresence mode="wait" custom={dir}>
+                <motion.div
+                  key={idx}
+                  custom={dir}
+                  variants={variants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="flex flex-col gap-6"
+                >
+                  {/* Aspas decorativas */}
+                  <Quote className="w-8 h-8 text-primary/30 -mb-2" />
+
+                  {/* Estrelas */}
+                  <div className="flex gap-1">
+                    {Array(t.stars).fill(0).map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-primary fill-primary" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="font-bold text-sm">{name}</div>
-                    <div className="text-xs text-secondary-foreground">{role}</div>
+
+                  {/* Texto */}
+                  <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
+                    "{t.text}"
+                  </p>
+
+                  {/* Autor */}
+                  <div className="flex items-center gap-3 pt-2 border-t border-border">
+                    <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <span className="text-primary font-black">{t.name[0]}</span>
+                    </div>
+                    <div>
+                      <div className="font-bold">{t.name}</div>
+                      <div className="text-xs text-secondary-foreground">{t.role}</div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatedSection>
-          ))}
-        </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Botões nav */}
+            <button
+              onClick={() => go(-1)}
+              className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary flex items-center justify-center transition-all"
+              aria-label="Anterior"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => go(1)}
+              className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary flex items-center justify-center transition-all"
+              aria-label="Próximo"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </motion.div>
+
+          {/* Dots */}
+          <motion.div variants={fadeUp} className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage([i, i > idx ? 1 : -1])}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === idx ? "w-6 bg-primary" : "w-1.5 bg-border hover:bg-primary/40"}`}
+                aria-label={`Ir para depoimento ${i + 1}`}
+              />
+            ))}
+          </motion.div>
+        </AnimatedSection>
 
         {/* Instagram CTA */}
-        <AnimatedSection className="text-center">
+        <AnimatedSection className="text-center mt-14">
           <motion.div variants={fadeUp}>
             <p className="text-secondary-foreground text-sm mb-4">Acompanhe os bastidores e resultados no Instagram</p>
             <a href={IG} target="_blank" rel="noopener noreferrer"
