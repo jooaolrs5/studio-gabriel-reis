@@ -8,6 +8,7 @@ import { BeliefSection } from "@/components/sections/BeliefSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ForWhomSection } from "@/components/sections/ForWhomSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -25,6 +26,7 @@ export default function Home() {
       <AboutSection />
       <ForWhomSection />
       <DifferentialsSection />
+      <ProcessSection />
       <ServicesSection />
       <PricingSection />
       <TestimonialsSection />
