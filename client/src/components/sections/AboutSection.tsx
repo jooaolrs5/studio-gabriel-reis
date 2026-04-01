@@ -48,7 +48,7 @@ export function AboutSection() {
               <img
                 src="/images/logo-white.png"
                 alt="Studio Gabriel Reis"
-                className="h-14 md:h-16 w-auto object-contain drop-shadow-lg"
+                className="h-20 md:h-24 w-auto object-contain drop-shadow-lg"
               />
             </div>
 
