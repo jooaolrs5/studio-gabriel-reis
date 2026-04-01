@@ -9,7 +9,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <img
           src="/images/gabriel-studio.jpg"
-          alt="Studio Gabriel Reis"
+          alt="Studio Gabriel Reis - Alta Performance e Prevenção de Lesões"
           style={{ objectPosition: "center 20%" }}
           className="w-full h-full object-cover"
         />

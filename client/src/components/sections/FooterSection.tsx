@@ -18,11 +18,11 @@ export function FooterSection() {
         <div className="md:col-span-2 space-y-4">
           <img
             src="/images/logo-white.png"
-            alt="Gabriel Reis"
+            alt="Studio Gabriel Reis - Alta Performance e Prevenção de Lesões"
             className="h-12 w-auto object-contain"
           />
           <p className="text-secondary-foreground text-sm leading-relaxed max-w-xs">
-            Alta Performance e Prevenção de Lesões. Centro especializado em reabilitação e retreinamento em São Luís, MA.
+            Studio Gabriel Reis - Alta Performance e Prevenção de Lesões. Centro especializado em São Luís, MA.
           </p>
           <a href={IG} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-secondary-foreground hover:text-primary transition-colors">

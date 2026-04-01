@@ -1,5 +1,5 @@
 export const WA_NUM = "5598985890378";
-export const WA_MSG = encodeURIComponent("Olá! Quero agendar minha avaliação no Studio Gabriel Reis.");
+export const WA_MSG = encodeURIComponent("Olá! Quero agendar minha avaliação no Studio Gabriel Reis - Alta Performance e Prevenção de Lesões.");
 export const WA = `https://wa.me/${WA_NUM}?text=${WA_MSG}`;
 
 export const IG = "https://www.instagram.com/studiogabrielreis";
