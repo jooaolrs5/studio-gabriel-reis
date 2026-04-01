@@ -24,12 +24,12 @@ export function NavBar() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"}`}>
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="font-black tracking-tight leading-none flex flex-col">
-          <span className="text-lg md:text-xl uppercase">
-            <span className="text-foreground">Gabriel</span>
-            <span className="text-primary">Reis</span>
-          </span>
-          <span className="text-[9px] text-secondary-foreground font-semibold tracking-[0.18em] uppercase">Alta Performance e Prevenção</span>
+        <a href="#" className="flex items-center">
+          <img
+            src="/images/logo-white.png"
+            alt="Gabriel Reis – Alta Performance e Prevenção"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

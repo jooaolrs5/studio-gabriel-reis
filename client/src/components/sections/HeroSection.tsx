@@ -8,8 +8,9 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400&q=85&fit=crop"
+          src="/images/gabriel-studio.jpg"
           alt="Studio Gabriel Reis"
+          style={{ objectPosition: "center 20%" }}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10" />

@@ -16,11 +16,11 @@ export function FooterSection() {
 
         {/* Marca */}
         <div className="md:col-span-2 space-y-4">
-          <h3 className="text-xl font-black uppercase">
-            <span className="text-foreground">Gabriel</span>
-            <span className="text-primary">Reis</span>
-            <span className="block text-[10px] text-secondary-foreground font-semibold tracking-[0.15em] normal-case mt-0.5">Alta Performance e Prevenção em Lesões</span>
-          </h3>
+          <img
+            src="/images/logo-white.png"
+            alt="Gabriel Reis"
+            className="h-12 w-auto object-contain"
+          />
           <p className="text-secondary-foreground text-sm leading-relaxed max-w-xs">
             Alta Performance e Prevenção de Lesões. Centro especializado em reabilitação e retreinamento em São Luís, MA.
           </p>
