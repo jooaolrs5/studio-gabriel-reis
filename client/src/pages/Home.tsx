@@ -10,6 +10,7 @@ import { ForWhomSection } from "@/components/sections/ForWhomSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { LocationSection } from "@/components/sections/LocationSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <DifferentialsSection />
       <ServicesSection />
       <TestimonialsSection />
+      <LocationSection />
       <CtaSection />
       <FooterSection />
 

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { WA } from "@/lib/constants";
+import { ArrowRight, Star } from "lucide-react";
 import { fadeUp, stagger } from "@/components/shared/motion";
 import { WaButton, WaIcon } from "@/components/shared/WaButton";
 
@@ -19,6 +18,7 @@ export function HeroSection() {
 
       <div className="container relative z-10 pt-28 pb-20">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl space-y-7">
+
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-primary text-xs font-bold tracking-[0.18em] uppercase">Performance Elite · São Luís, MA</span>
@@ -40,6 +40,19 @@ export function HeroSection() {
               Conheça o Studio
             </a>
           </motion.div>
+
+          {/* Prova de autoridade sutil */}
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-3 pt-2">
+            <div className="flex gap-0.5">
+              {Array(5).fill(0).map((_, i) => (
+                <Star key={i} className="w-4 h-4 text-primary fill-primary" />
+              ))}
+            </div>
+            <span className="text-sm text-secondary-foreground">
+              <span className="text-foreground font-bold">5.0</span> — Avaliado pelos nossos alunos no Google
+            </span>
+          </motion.div>
+
         </motion.div>
       </div>
 
