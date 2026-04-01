@@ -43,6 +43,15 @@ export function AboutSection() {
               <h3 className="text-2xl font-black text-white">Gabriel Barros Reis</h3>
             </div>
 
+            {/* Logo sobre a foto */}
+            <div className="absolute top-5 left-1/2 -translate-x-1/2">
+              <img
+                src="/images/logo-white.png"
+                alt="Studio Gabriel Reis"
+                className="h-14 md:h-16 w-auto object-contain drop-shadow-lg"
+              />
+            </div>
+
             {/* Cantos decorativos */}
             <div className="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-primary/40 rounded-tl-xl pointer-events-none" />
             <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-2 border-r-2 border-primary/40 rounded-br-xl pointer-events-none" />
