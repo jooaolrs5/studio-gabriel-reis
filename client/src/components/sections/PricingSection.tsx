@@ -17,9 +17,9 @@ const cohamaPlans: Record<Freq, { mensal: number; trimestral: [number, number]; 
 };
 
 const santaCruzPlan = {
-  mensal: 179.90,
-  trimestral: [149.90, 449.70] as [number, number],
-  anual: [114.90, 1378.80] as [number, number],
+  mensal: 150.00,
+  trimestral: [125.00, 375.00] as [number, number],
+  anual: [100.00, 1200.00] as [number, number],
 };
 
 function fmt(v: number) {
