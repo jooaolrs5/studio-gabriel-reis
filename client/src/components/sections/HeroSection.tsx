@@ -27,18 +27,16 @@ export function HeroSection() {
           </motion.div>
 
           <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-[80px] font-black leading-[0.92] tracking-tight">
-            Aqui não é academia.<br />
-            É <span className="text-primary">especialização</span>.
+            Seu corpo no mais alto nível de <span className="text-primary">performance</span>.
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-lg md:text-xl text-secondary-foreground max-w-xl leading-relaxed">
-            Reabilitação, alta performance e prevenção de lesões com método científico e acompanhamento individual.{" "}
-            <span className="text-foreground font-semibold">Cada treino tem um propósito. O seu.</span>
+            Treinamento especializado para quem busca evolução real, prevenção e recuperação de lesões.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
             <WaButton>
-              <WaIcon /> Agendar Avaliação <ArrowRight className="w-4 h-4" />
+              <WaIcon /> Agendar Avaliação
             </WaButton>
             <a
               href={WA} target="_blank" rel="noopener noreferrer"
