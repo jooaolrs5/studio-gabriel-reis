@@ -28,7 +28,7 @@ export function NavBar() {
           <img
             src="/images/logo-white.png"
             alt="Studio Gabriel Reis - Alta Performance e Prevenção de Lesões"
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-14 md:h-16 w-auto object-contain"
           />
         </a>
 
