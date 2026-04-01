@@ -11,7 +11,7 @@ export function WaIcon({ size = 5 }: { size?: number }) {
 export function WaButton({ href = WA, children, full = false }: { href?: string; children: React.ReactNode; full?: boolean }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer"
-      className={`h-14 px-8 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg inline-flex items-center justify-center gap-2 transition-all text-base shadow-lg shadow-primary/20 ${full ? "w-full" : ""}`}>
+      className={`h-14 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg inline-flex items-center justify-center gap-2 transition-all text-base shadow-lg shadow-primary/20 ${full ? "w-full" : ""}`}>
       {children}
     </a>
   );

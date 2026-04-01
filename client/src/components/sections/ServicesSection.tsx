@@ -59,7 +59,7 @@ export function ServicesSection() {
                   ))}
                 </ul>
                 <a href={WA} target="_blank" rel="noopener noreferrer"
-                  className={`w-full h-12 rounded-lg font-bold inline-flex items-center justify-center text-sm transition-all gap-2 ${highlight ? "bg-primary hover:bg-primary/90 text-white" : "border border-primary/30 hover:border-primary text-primary hover:bg-primary/10"}`}>
+                  className={`w-full h-12 rounded-lg font-bold inline-flex items-center justify-center text-sm transition-all gap-2 ${highlight ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "border border-primary/30 hover:border-primary text-primary hover:bg-primary/10"}`}>
                   <WaIcon size={4} /> Quero começar
                 </a>
               </motion.div>
