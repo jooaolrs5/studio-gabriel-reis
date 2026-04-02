@@ -25,7 +25,7 @@ export function VideoSection() {
 
         <AnimatedSection>
           <motion.div variants={fadeUp} className="flex justify-center">
-            <div className="relative w-full max-w-sm rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
+            <div className="relative w-full max-w-xs sm:max-w-sm rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div className="aspect-[9/16] relative bg-black">
 
                 {playing ? (
