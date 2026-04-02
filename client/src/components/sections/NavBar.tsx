@@ -50,7 +50,7 @@ export function NavBar() {
           <img
             src="/images/logo-white.png"
             alt="Studio Gabriel Reis"
-            className="h-14 md:h-16 w-auto object-contain"
+            className="h-10 md:h-16 w-auto object-contain"
           />
         </a>
 
