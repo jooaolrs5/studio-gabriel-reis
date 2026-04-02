@@ -3,10 +3,16 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Label } from "@/components/shared/Label";
 import { fadeUp } from "@/components/shared/motion";
 
-// TODO: adicionar CREF e certificações do Gabriel
 const credentials = [
-  { label: "CREF", value: "XXXXXXX" },
-  { label: "Certificações", value: "a definir" },
+  "Bacharel em Educação Física",
+  "Especialista em Lesões e Doenças Musculoesqueléticas",
+  "Especialista em Biomecânica, Fisiologia do Exercício e Personal Trainer",
+  "Especialista em Grupos Especiais",
+  "Especialista em Avaliação Física",
+  "Certificação Biomotion – Instituto Biodesp – RJ",
+  "Certificação SMPPL – Alex Souto Maior – RJ",
+  "Certificação L1 – Athletic Lab",
+  "LPO L1",
 ];
 
 export function AuthoritySection() {
@@ -37,9 +43,9 @@ export function AuthoritySection() {
           {/* Texto */}
           <AnimatedSection className="flex-1 space-y-5 text-center md:text-left">
             <motion.div variants={fadeUp}>
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Gabriel Reis</h2>
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Gabriel Barros Reis</h2>
               <p className="text-primary font-semibold mt-1">
-                Fundador &amp; Especialista em Performance e Reabilitação
+                CEO &amp; Fundador · Especialista em Performance e Reabilitação
               </p>
             </motion.div>
 
@@ -52,9 +58,10 @@ export function AuthoritySection() {
             </motion.p>
 
             <motion.ul variants={fadeUp} className="space-y-2 pt-2">
-              {credentials.map(({ label, value }) => (
-                <li key={label} className="text-sm text-secondary-foreground">
-                  <span className="font-bold text-foreground">{label}:</span> {value}
+              {credentials.map((c) => (
+                <li key={c} className="flex items-start gap-2 text-sm text-secondary-foreground">
+                  <span className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  {c}
                 </li>
               ))}
             </motion.ul>
