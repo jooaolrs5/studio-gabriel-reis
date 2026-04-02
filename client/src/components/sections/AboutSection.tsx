@@ -23,7 +23,7 @@ const highlights = [
 export function AboutSection() {
   return (
     <section id="sobre" className="py-20 md:py-32 border-t border-border bg-secondary/10">
-      <div className="container grid lg:grid-cols-2 gap-16 items-start">
+      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
         {/* Foto real + badge CEO */}
         <AnimatedSection>
