@@ -63,7 +63,7 @@ export function AboutSection() {
           <motion.div variants={fadeUp}>
             <Label text="Sobre o Studio" />
             <h2 className="text-4xl md:text-5xl font-black leading-tight mb-5">
-              Não é academia.<br />É <span className="text-primary">especialização</span>
+              Não é academia.<br />É <span className="text-primary">performance</span>
             </h2>
             <p className="text-secondary-foreground text-lg leading-relaxed">
               O Studio Gabriel Reis foi criado para quem entende que treinar com inteligência
