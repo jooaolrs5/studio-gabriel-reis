@@ -86,10 +86,10 @@ export function LocationSection() {
             {/* CTA */}
             <motion.div variants={fadeUp} className="pt-2">
               <p className="text-secondary-foreground text-sm mb-4">
-                Agende sua avaliação e dê o primeiro passo para evoluir com segurança
+                Agende sua aula diagnóstica e dê o primeiro passo para evoluir com segurança
               </p>
               <WaButton full>
-                <WaIcon /> Agendar Avaliação Gratuita
+                <WaIcon /> Agendar Aula Diagnóstica
               </WaButton>
             </motion.div>
 

@@ -4,7 +4,7 @@ import { fadeUp } from "@/components/shared/motion";
 import { WaButton, WaIcon } from "@/components/shared/WaButton";
 import { WA_NUM } from "@/lib/constants";
 
-const WA_FINAL = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Quero agendar minha avaliação.")}`;
+const WA_FINAL = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Quero agendar minha aula diagnóstica.")}`;
 
 export function FinalCTASection() {
   return (
@@ -49,7 +49,7 @@ export function FinalCTASection() {
 
             <motion.div variants={fadeUp}>
               <WaButton href={WA_FINAL}>
-                <WaIcon /> Quero treinar no #PadrãoGR
+                <WaIcon /> Agendar minha aula diagnóstica
               </WaButton>
             </motion.div>
           </motion.div>

@@ -43,7 +43,7 @@ const cards = [
   },
   {
     icon: <ClipboardIcon />,
-    title: "Avaliação completa",
+    title: "Aula diagnóstica",
     desc: "Antes de começar, entendemos seu corpo e suas limitações.",
   },
   {

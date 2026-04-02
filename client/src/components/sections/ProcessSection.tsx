@@ -7,9 +7,9 @@ import { WaButton, WaIcon } from "@/components/shared/WaButton";
 const steps = [
   {
     n: "01",
-    title: "Avaliação inicial",
+    title: "Aula diagnóstica",
     desc: "Identificamos limitações, dores e objetivos",
-    detail: "Grátis na primeira consulta",
+    detail: "Grátis na primeira aula",
   },
   {
     n: "02",
@@ -91,7 +91,7 @@ export function ProcessSection() {
         <AnimatedSection className="text-center mt-14">
           <motion.div variants={fadeUp}>
             <WaButton>
-              <WaIcon /> Agendar minha avaliação gratuita
+              <WaIcon /> Agendar minha aula diagnóstica
             </WaButton>
           </motion.div>
         </AnimatedSection>

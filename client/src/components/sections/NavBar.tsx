@@ -101,7 +101,7 @@ export function NavBar() {
           )}
 
           <div className="ml-3">
-            <WaButton><WaIcon /> Agendar Avaliação</WaButton>
+            <WaButton><WaIcon /> Agendar Aula Diagnóstica</WaButton>
           </div>
         </div>
 
@@ -148,7 +148,7 @@ export function NavBar() {
                 )
               )}
               <div className="mt-4">
-                <WaButton full><WaIcon /> Agendar Avaliação</WaButton>
+                <WaButton full><WaIcon /> Agendar Aula Diagnóstica</WaButton>
               </div>
             </div>
           </motion.div>
