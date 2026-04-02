@@ -66,10 +66,13 @@ export function TestimonialsSection() {
       <div className="container">
 
         <AnimatedSection className="text-center mb-14">
-          <motion.div variants={fadeUp}><Label text="Prova Social" /></motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-6">
-            Resultados reais de quem<br />decidiu treinar com método
+          <motion.div variants={fadeUp}><Label text="Depoimentos" /></motion.div>
+          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
+            Quem treinou aqui<br /><span className="text-primary">conta o que viveu</span>
           </motion.h2>
+          <motion.p variants={fadeUp} className="text-secondary-foreground max-w-lg mx-auto mb-6">
+            Resultados reais de pessoas que escolheram um método diferente.
+          </motion.p>
 
           <motion.div variants={fadeUp}
             className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-card border border-border">
