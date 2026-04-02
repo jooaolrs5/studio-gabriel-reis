@@ -112,7 +112,10 @@ export function PricingSection() {
               Não é sobre pagar por um plano.
             </p>
             <p className="text-primary font-black text-lg mt-1">
-              É sobre investir em um método que realmente funciona.
+              É sobre investir no <span className="text-primary">#PadrãoGR</span>.
+            </p>
+            <p className="text-secondary-foreground text-sm mt-2">
+              Método que realmente funciona — avaliado, acompanhado e ajustado para você.
             </p>
           </motion.div>
         </AnimatedSection>

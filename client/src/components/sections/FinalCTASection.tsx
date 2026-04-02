@@ -15,6 +15,13 @@ export function FinalCTASection() {
             variants={fadeUp}
             className="rounded-2xl border border-primary/30 bg-primary/10 px-8 py-12 md:px-12 md:py-16 space-y-6"
           >
+            <motion.p
+              variants={fadeUp}
+              className="text-xs font-bold tracking-[0.2em] uppercase text-primary/70 mb-2"
+            >
+              #PadrãoGR
+            </motion.p>
+
             <motion.h2
               variants={fadeUp}
               className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.1] tracking-tight"
@@ -26,7 +33,8 @@ export function FinalCTASection() {
               variants={fadeUp}
               className="text-xl sm:text-2xl font-bold text-primary"
             >
-              Mas se você quer evoluir de verdade, precisa de método.
+              Mas se você quer evoluir de verdade, você precisa do{" "}
+              <span className="whitespace-nowrap">#PadrãoGR</span>.
             </motion.p>
 
             {/* Divisor decorativo */}
@@ -41,7 +49,7 @@ export function FinalCTASection() {
 
             <motion.div variants={fadeUp}>
               <WaButton href={WA_FINAL}>
-                <WaIcon /> Agendar avaliação agora
+                <WaIcon /> Quero treinar no #PadrãoGR
               </WaButton>
             </motion.div>
           </motion.div>
