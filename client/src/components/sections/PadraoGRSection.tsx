@@ -7,7 +7,7 @@ const pillars = [
   {
     num: "01",
     title: "Padrão de Avaliação",
-    text: "Nenhum treino começa sem uma avaliação completa. Histórico, objetivos, limitações e potencial — tudo mapeado antes de você piscar.",
+    text: "Nenhum treino começa sem uma aula diagnóstica. Histórico, objetivos, limitações e potencial — tudo mapeado antes de você piscar.",
   },
   {
     num: "02",

@@ -4,7 +4,7 @@ import { fadeUp, stagger } from "@/components/shared/motion";
 import { WaButton, WaIcon } from "@/components/shared/WaButton";
 import { WA_NUM } from "@/lib/constants";
 
-const WA_EVAL = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Quero agendar uma avaliação.")}`;
+const WA_EVAL = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Quero agendar minha aula diagnóstica.")}`;
 const WA_INFO = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Vim pelo site e gostaria de mais informações.")}`;
 
 export function HeroSection() {
@@ -41,7 +41,7 @@ export function HeroSection() {
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
             <WaButton href={WA_EVAL}>
-              <WaIcon /> Agendar avaliação
+              <WaIcon /> Agendar aula diagnóstica
             </WaButton>
             <a
               href={WA_INFO} target="_blank" rel="noopener noreferrer"

@@ -44,7 +44,7 @@ const levels = [
       "Treino estruturado e periodizado",
       "Correção técnica de execução",
       "Acompanhamento profissional",
-      "Avaliação inicial completa",
+      "Aula diagnóstica inclusa",
     ],
     highlight: false,
   },
@@ -97,7 +97,7 @@ export function PricingSection() {
             Como você pode treinar aqui
           </motion.h2>
           <motion.p variants={fadeUp} className="text-secondary-foreground max-w-xl mx-auto leading-relaxed">
-            Cada aluno passa por uma avaliação para definir o melhor formato de acompanhamento,
+            Cada aluno começa com uma aula diagnóstica para definir o melhor formato de acompanhamento,
             garantindo evolução com segurança e precisão.
           </motion.p>
         </AnimatedSection>
@@ -204,7 +204,7 @@ export function PricingSection() {
                         rel="noopener noreferrer"
                         className={`w-full h-11 rounded-lg text-sm font-bold inline-flex items-center justify-center gap-2 transition-all ${highlight ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"}`}
                       >
-                        <WaIcon size={4} /> Agendar avaliação
+                        <WaIcon size={4} /> Agendar aula diagnóstica
                       </a>
                     </motion.div>
                   </AnimatedSection>
@@ -212,7 +212,7 @@ export function PricingSection() {
               </div>
 
               <p className="text-center text-xs text-secondary-foreground mt-6">
-                Aceita <strong className="text-foreground">Visa, Mastercard, Hipercard e Elo</strong> · Avaliação inicial: <strong className="text-foreground">R$ 100,00</strong>
+                Aceita <strong className="text-foreground">Visa, Mastercard, Hipercard e Elo</strong> · Aula diagnóstica: <strong className="text-foreground">R$ 100,00</strong>
               </p>
             </motion.div>
           )}
@@ -247,7 +247,7 @@ export function PricingSection() {
                         rel="noopener noreferrer"
                         className={`w-full h-11 rounded-lg text-sm font-bold inline-flex items-center justify-center gap-2 transition-all ${highlight ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"}`}
                       >
-                        <WaIcon size={4} /> Agendar avaliação
+                        <WaIcon size={4} /> Agendar aula diagnóstica
                       </a>
                     </motion.div>
                   </AnimatedSection>
@@ -267,7 +267,7 @@ export function PricingSection() {
           <motion.div variants={fadeUp} className="text-center mt-14 max-w-xl mx-auto">
             <p className="text-secondary-foreground leading-relaxed mb-6">
               A melhor forma de entender qual formato é ideal para você
-              é passando por uma <span className="text-foreground font-semibold">avaliação inicial</span>.
+              é passando por uma <span className="text-foreground font-semibold">aula diagnóstica</span>.
             </p>
             <WaButton>
               <WaIcon /> Falar no WhatsApp

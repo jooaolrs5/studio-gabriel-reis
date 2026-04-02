@@ -8,7 +8,7 @@ import { WA_NUM } from "@/lib/constants";
 const WA_SOLUTION = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Quero treinar com método.")}`;
 
 const bullets = [
-  "Avaliação antes de qualquer treino",
+  "Aula diagnóstica antes de qualquer treino",
   "Plano construído para você",
   "Evolução mensurável",
 ];
@@ -45,7 +45,7 @@ export function SolutionSection() {
             variants={fadeUp}
             className="text-base md:text-lg text-secondary-foreground leading-relaxed"
           >
-            Aqui, cada treino é construído com base em avaliação, correção de movimento e acompanhamento
+            Aqui, cada treino começa com uma aula diagnóstica, passa por correção de movimento e acompanhamento
             contínuo. O foco não é apenas treinar mais — é treinar certo.
           </motion.p>
 
