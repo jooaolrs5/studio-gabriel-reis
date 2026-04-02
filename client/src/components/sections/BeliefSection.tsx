@@ -30,7 +30,7 @@ export function BeliefSection() {
             ))}
           </motion.div>
 
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black leading-tight mb-6">
+          <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6">
             O problema não é você.{" "}
             <span className="text-primary">É a falta de método.</span>
           </motion.h2>
