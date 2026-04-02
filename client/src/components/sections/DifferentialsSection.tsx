@@ -24,7 +24,7 @@ export function DifferentialsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ n, title, desc }) => (
             <AnimatedSection key={n}>
-              <motion.div variants={fadeUp} className="relative p-8 border border-border rounded-2xl hover:border-primary/40 hover:bg-secondary/10 transition-all group overflow-hidden h-full">
+              <motion.div variants={fadeUp} className="relative p-5 sm:p-8 border border-border rounded-2xl hover:border-primary/40 hover:bg-secondary/10 transition-all group overflow-hidden h-full">
                 <div className="text-6xl font-black text-primary/10 group-hover:text-primary/20 transition-colors leading-none mb-5 select-none">{n}</div>
                 <h3 className="text-lg font-bold mb-2">{title}</h3>
                 <p className="text-secondary-foreground text-sm leading-relaxed">{desc}</p>
