@@ -26,7 +26,7 @@ export function HeroSection() {
             <span className="text-primary text-xs font-bold tracking-[0.18em] uppercase">Centro especializado · São Luís, MA</span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-[80px] font-black leading-[0.92] tracking-tight">
+          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-7xl lg:text-[80px] font-black leading-[0.92] tracking-tight">
             Seu corpo no mais alto nível de <span className="text-primary">performance</span>.
           </motion.h1>
 
