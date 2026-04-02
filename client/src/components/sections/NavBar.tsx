@@ -9,13 +9,12 @@ const links = [
   {
     label: "O Método",
     children: [
-      { label: "Como Funciona", href: "#processo" },
       { label: "Diferenciais", href: "#metodo" },
-      { label: "Serviços", href: "#servicos" },
+      { label: "Como Funciona", href: "#processo" },
     ],
   },
+  { label: "Depoimentos", href: "#resultados" },
   { label: "Planos", href: "#planos" },
-  { label: "Resultados", href: "#resultados" },
   { label: "Localização", href: "#localizacao" },
 ];
 

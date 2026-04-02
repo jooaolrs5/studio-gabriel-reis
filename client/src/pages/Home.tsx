@@ -5,11 +5,10 @@ import { VideoSection } from "@/components/sections/VideoSection";
 import { BeliefBreakSection } from "@/components/sections/BeliefBreakSection";
 import { PainSection } from "@/components/sections/PainSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { AboutSection } from "@/components/sections/AboutSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-
 import { PricingSection } from "@/components/sections/PricingSection";
 import { LocationSection } from "@/components/sections/LocationSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
@@ -19,20 +18,38 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <NavBar />
+
+      {/* 1. Impacto */}
       <HeroSection />
+
+      {/* 2. Prova visual — o ambiente */}
       <VideoSection />
+
+      {/* 3. Quebra de crença + dor + solução */}
       <BeliefBreakSection />
       <PainSection />
       <SolutionSection />
+
+      {/* 4. Autoridade — quem é Gabriel */}
+      <AboutSection />
+
+      {/* 5. Método e processo */}
       <DifferentialsSection />
       <ProcessSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <LocationSection />
-      <FinalCTASection />
-      <FooterSection />
 
+      {/* 6. Prova social */}
+      <TestimonialsSection />
+
+      {/* 7. Oferta */}
+      <PricingSection />
+
+      {/* 8. Logística */}
+      <LocationSection />
+
+      {/* 9. Fechamento */}
+      <FinalCTASection />
+
+      <FooterSection />
       <WhatsAppFloat />
     </div>
   );
