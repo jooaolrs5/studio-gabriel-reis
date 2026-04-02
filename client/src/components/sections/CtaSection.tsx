@@ -22,7 +22,7 @@ export function CtaSection() {
             <span className="text-primary text-xs font-bold tracking-widest uppercase">Vagas Limitadas</span>
           </motion.div>
 
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black leading-tight mb-6">
+          <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6">
             Chega de treinar sem direção.<br />
             <span className="text-primary">Começa agora.</span>
           </motion.h2>
@@ -41,7 +41,7 @@ export function CtaSection() {
             </WaButton>
             <a
               href={IG} target="_blank" rel="noopener noreferrer"
-              className="h-14 px-8 border border-border hover:border-primary/50 hover:bg-secondary/20 font-medium rounded-lg inline-flex items-center justify-center gap-2 text-base transition-all"
+              className="h-14 px-6 border border-border hover:border-primary/50 hover:bg-secondary/20 font-medium rounded-lg inline-flex items-center justify-center gap-2 text-base transition-all"
             >
               <Instagram className="w-5 h-5" /> Ver resultados no Instagram
             </a>
