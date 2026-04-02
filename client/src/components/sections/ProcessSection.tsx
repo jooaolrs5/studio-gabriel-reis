@@ -7,26 +7,26 @@ import { WaButton, WaIcon } from "@/components/shared/WaButton";
 const steps = [
   {
     n: "01",
-    title: "Avaliação Inicial",
-    desc: "Uma conversa detalhada sobre seu histórico, objetivos, limitações e rotina. Nada começa sem conhecer você a fundo.",
+    title: "Avaliação inicial",
+    desc: "Identificamos limitações, dores e objetivos",
     detail: "Grátis na primeira consulta",
   },
   {
     n: "02",
-    title: "Diagnóstico Funcional",
-    desc: "Análise completa de movimento, postura, força e mobilidade. Mapeamos seus pontos de atenção antes de qualquer treino.",
+    title: "Diagnóstico físico",
+    desc: "Entendemos exatamente o que precisa ser trabalhado",
     detail: "Base científica e individual",
   },
   {
     n: "03",
-    title: "Plano Personalizado",
-    desc: "Seu treino é montado do zero. Periodização, progressão e exercícios escolhidos exclusivamente para o seu corpo e meta.",
+    title: "Treino personalizado",
+    desc: "Plano construído exclusivamente para você",
     detail: "Sem modelo pronto",
   },
   {
     n: "04",
-    title: "Acompanhamento Contínuo",
-    desc: "Cada sessão é supervisionada e ajustada. Métricas reais, feedback constante e evolução mensurável a cada semana.",
+    title: "Acompanhamento contínuo",
+    desc: "Ajustes constantes para garantir evolução",
     detail: "Você vê a diferença",
   },
 ];
@@ -36,12 +36,12 @@ export function ProcessSection() {
     <section id="processo" className="py-20 md:py-32 border-t border-border bg-secondary/10">
       <div className="container">
         <AnimatedSection className="text-center mb-14">
-          <motion.div variants={fadeUp}><Label text="Como Funciona" /></motion.div>
+          <motion.div variants={fadeUp}><Label text="Como funciona" /></motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
-            Do primeiro contato ao <span className="text-primary">resultado real</span>
+            Como funciona
           </motion.h2>
           <motion.p variants={fadeUp} className="text-secondary-foreground max-w-lg mx-auto">
-            Um processo estruturado que elimina achismo e garante que cada etapa leva à próxima com segurança.
+            Do primeiro contato à evolução contínua
           </motion.p>
         </AnimatedSection>
 

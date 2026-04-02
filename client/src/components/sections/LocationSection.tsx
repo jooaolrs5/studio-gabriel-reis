@@ -13,10 +13,10 @@ export function LocationSection() {
         <AnimatedSection className="text-center mb-14">
           <motion.div variants={fadeUp}><Label text="Onde Estamos" /></motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
-            Venha nos conhecer
+            Fácil de encontrar, difícil de esquecer
           </motion.h2>
           <motion.p variants={fadeUp} className="text-secondary-foreground max-w-lg mx-auto">
-            Localizado em uma das regiões mais acessíveis de São Luís. Fácil acesso e estacionamento.
+            Localizado em uma das regiões mais acessíveis de São Luís
           </motion.p>
         </AnimatedSection>
 

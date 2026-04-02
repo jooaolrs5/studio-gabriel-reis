@@ -1,19 +1,16 @@
 import { NavBar } from "@/components/sections/NavBar";
 import { WhatsAppFloat } from "@/components/sections/WhatsAppFloat";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { BeliefSection } from "@/components/sections/BeliefSection";
-import { VideoSection } from "@/components/sections/VideoSection";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ForWhomSection } from "@/components/sections/ForWhomSection";
+import { BeliefBreakSection } from "@/components/sections/BeliefBreakSection";
+import { PainSection } from "@/components/sections/PainSection";
+import { SolutionSection } from "@/components/sections/SolutionSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { PricingSection } from "@/components/sections/PricingSection";
+import { AuthoritySection } from "@/components/sections/AuthoritySection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { LocationSection } from "@/components/sections/LocationSection";
-import { CtaSection } from "@/components/sections/CtaSection";
+import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
@@ -21,19 +18,16 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <NavBar />
       <HeroSection />
-      <StatsSection />
-      <BeliefSection />
-      <VideoSection />
-      <AboutSection />
-      <ForWhomSection />
+      <BeliefBreakSection />
+      <PainSection />
+      <SolutionSection />
       <DifferentialsSection />
       <ProcessSection />
-      <ServicesSection />
-      <Testimonials />
-      <PricingSection />
+      <AuthoritySection />
       <TestimonialsSection />
+      <Testimonials />
       <LocationSection />
-      <CtaSection />
+      <FinalCTASection />
       <FooterSection />
 
       <WhatsAppFloat />

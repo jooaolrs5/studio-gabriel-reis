@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { fadeUp, stagger } from "@/components/shared/motion";
 import { WaButton, WaIcon } from "@/components/shared/WaButton";
-import { WA } from "@/lib/constants";
+import { WA_NUM } from "@/lib/constants";
+
+const WA_EVAL = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Quero agendar uma avaliação.")}`;
+const WA_INFO = `https://wa.me/${WA_NUM}?text=${encodeURIComponent("Olá Gabriel! Vim pelo site e gostaria de mais informações.")}`;
 
 export function HeroSection() {
   return (
@@ -27,21 +30,21 @@ export function HeroSection() {
           </motion.div>
 
           <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.0] tracking-tight">
-            Seu corpo tem um limite.{" "}
-            <span className="text-primary">Nós encontramos onde ele está.</span>
+            Aqui não é academia.{" "}
+            <span className="text-primary">É método.</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-base md:text-lg text-secondary-foreground max-w-lg leading-relaxed">
-            Performance de alto nível e retreinamento de lesões com protocolo
-            individualizado para cada paciente.
+            Treinamento focado em alta performance, reabilitação e prevenção de lesões. Cada aluno é
+            avaliado, acompanhado e direcionado com precisão.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
-            <WaButton>
-              <WaIcon /> Agendar Avaliação
+            <WaButton href={WA_EVAL}>
+              <WaIcon /> Agendar avaliação
             </WaButton>
             <a
-              href={WA} target="_blank" rel="noopener noreferrer"
+              href={WA_INFO} target="_blank" rel="noopener noreferrer"
               className="h-14 px-8 border border-white/15 hover:border-primary/40 hover:bg-white/5 font-medium rounded-lg inline-flex items-center justify-center transition-all text-base gap-2"
             >
               <WaIcon size={5} /> Falar com um especialista
