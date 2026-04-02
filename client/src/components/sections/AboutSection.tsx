@@ -5,6 +5,7 @@ import { Label } from "@/components/shared/Label";
 import { fadeUp } from "@/components/shared/motion";
 
 const credentials = [
+  "CREF 3994 G/MA",
   "Bacharel em Educação Física",
   "Especialista em Lesões e Doenças Musculoesqueléticas",
   "Especialista em Biomecânica, Fisiologia do Exercício e Personal Trainer",
