@@ -96,7 +96,7 @@ export function TestimonialsSection() {
             onMouseLeave={() => setPaused(false)}
           >
             {/* Card */}
-            <div className="overflow-hidden rounded-2xl border border-border bg-card px-8 md:px-16 py-12 min-h-[280px] flex flex-col justify-between">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card px-5 sm:px-8 md:px-16 py-10 min-h-[280px] flex flex-col justify-between">
               <AnimatePresence mode="wait" custom={dir}>
                 <motion.div
                   key={idx}
@@ -140,19 +140,37 @@ export function TestimonialsSection() {
             {/* Botões nav */}
             <button
               onClick={() => go(-1)}
-              className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary flex items-center justify-center transition-all"
+              className="hidden sm:flex absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary items-center justify-center transition-all"
               aria-label="Anterior"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => go(1)}
-              className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary flex items-center justify-center transition-all"
+              className="hidden sm:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary items-center justify-center transition-all"
               aria-label="Próximo"
             >
               <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
+
+          {/* Mobile nav buttons */}
+          <div className="flex sm:hidden justify-center gap-4 mt-4">
+            <button
+              onClick={() => go(-1)}
+              className="w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary flex items-center justify-center transition-all"
+              aria-label="Anterior"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => go(1)}
+              className="w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-secondary flex items-center justify-center transition-all"
+              aria-label="Próximo"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
 
           {/* Dots */}
           <motion.div variants={fadeUp} className="flex justify-center gap-2 mt-6">
