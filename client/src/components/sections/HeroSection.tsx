@@ -26,12 +26,14 @@ export function HeroSection() {
             <span className="text-primary text-xs font-bold tracking-[0.18em] uppercase">Centro especializado · São Luís, MA</span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-7xl lg:text-[80px] font-black leading-[0.92] tracking-tight">
-            Seu corpo no mais alto nível de <span className="text-primary">performance</span>.
+          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.0] tracking-tight">
+            Seu corpo tem um limite.{" "}
+            <span className="text-primary">Nós encontramos onde ele está.</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-lg md:text-xl text-secondary-foreground max-w-xl leading-relaxed">
-            Treinamento especializado para quem busca evolução real, prevenção e recuperação de lesões.
+          <motion.p variants={fadeUp} className="text-base md:text-lg text-secondary-foreground max-w-lg leading-relaxed">
+            Performance de alto nível e retreinamento de lesões com protocolo
+            individualizado para cada paciente.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
