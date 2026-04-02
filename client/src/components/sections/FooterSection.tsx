@@ -12,7 +12,7 @@ const navLinks = [
 export function FooterSection() {
   return (
     <footer className="border-t border-border py-14 bg-secondary/20">
-      <div className="container grid md:grid-cols-4 gap-10 mb-10">
+      <div className="container grid md:grid-cols-4 gap-6 md:gap-10 mb-10">
 
         {/* Marca */}
         <div className="md:col-span-2 space-y-4">
