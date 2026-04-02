@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Label } from "@/components/shared/Label";
 import { fadeUp } from "@/components/shared/motion";
 
-const VIDEO_ID = "39E-_2iQMK8";
+const DRIVE_FILE_ID = "1ZbAuT9oY9bWVey0GPEhbdo74mmfOMHXN";
 
 export function VideoSection() {
   return (
@@ -20,24 +20,16 @@ export function VideoSection() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <motion.div
-            variants={fadeUp}
-            className="flex justify-center"
-          >
-            {/* Container do Shorts — proporção 9:16 com max-width */}
+          <motion.div variants={fadeUp} className="flex justify-center">
             <div className="relative w-full max-w-sm rounded-2xl overflow-hidden border border-border shadow-2xl shadow-primary/10">
               <div className="aspect-[9/16]">
                 <iframe
-                  src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=0&rel=0&modestbranding=1`}
+                  src={`https://drive.google.com/file/d/${DRIVE_FILE_ID}/preview`}
                   title="Studio Gabriel Reis"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="autoplay"
                   allowFullScreen
                   className="w-full h-full"
                 />
-                {/* Cobre as infos do canal no topo */}
-                <div className="absolute top-0 left-0 right-0 h-14 bg-background pointer-events-none" />
-                {/* Cobre os controles/título na base */}
-                <div className="absolute bottom-0 left-0 right-0 h-14 bg-background pointer-events-none" />
               </div>
             </div>
           </motion.div>
