@@ -33,7 +33,7 @@ export function ForWhomSection() {
         <div className="grid md:grid-cols-2 gap-6 mb-12 mt-12">
           {personas.map(({ Icon, tag, title, desc }) => (
             <AnimatedSection key={title}>
-              <motion.div variants={fadeUp} className="p-8 rounded-2xl border border-border bg-card hover:border-primary/40 transition-all duration-300 group h-full">
+              <motion.div variants={fadeUp} className="p-5 sm:p-8 rounded-2xl border border-border bg-card hover:border-primary/40 transition-all duration-300 group h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors flex items-center justify-center">
                     <Icon className="w-6 h-6 text-primary" />
