@@ -60,7 +60,7 @@ export function ProcessSection() {
                     className={`lg:grid lg:grid-cols-2 lg:gap-16 items-center ${!isLeft ? "lg:dir-rtl" : ""}`}
                   >
                     {/* Conteúdo */}
-                    <div className={`p-8 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all group ${isLeft ? "lg:text-right" : "lg:order-last"}`}>
+                    <div className={`p-5 sm:p-8 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all group ${isLeft ? "lg:text-right" : "lg:order-last"}`}>
                       <div className={`flex items-center gap-3 mb-4 ${isLeft ? "lg:justify-end" : ""}`}>
                         <span className="text-xs font-bold text-primary/70 bg-primary/5 border border-primary/15 px-3 py-1 rounded-full">{detail}</span>
                       </div>
@@ -76,7 +76,7 @@ export function ProcessSection() {
                     </div>
 
                     {/* Número mobile */}
-                    <div className="lg:hidden flex items-center gap-3 mb-3 -mt-2">
+                    <div className="lg:hidden flex items-center gap-3 mb-3 mt-3">
                       <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
                         <span className="text-primary font-black text-xs">{n}</span>
                       </div>
