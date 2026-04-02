@@ -20,15 +20,17 @@ export function AuthoritySection() {
         </AnimatedSection>
 
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16 max-w-4xl mx-auto">
-          {/* Foto placeholder */}
-          <AnimatedSection className="flex-shrink-0 flex flex-col items-center gap-3">
+          {/* Foto real */}
+          <AnimatedSection className="flex-shrink-0">
             <motion.div
               variants={fadeUp}
-              className="w-full max-w-xs aspect-square rounded-full bg-secondary/50 border border-border flex items-center justify-center"
+              className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-primary/30 shadow-xl shadow-primary/10"
             >
-              <span className="text-secondary-foreground text-sm font-medium text-center px-6">
-                Foto do Gabriel
-              </span>
+              <img
+                src="/images/gabriel-portrait.jpg"
+                alt="Gabriel Reis – Fundador Studio Gabriel Reis"
+                className="w-full h-full object-cover object-top"
+              />
             </motion.div>
           </AnimatedSection>
 
