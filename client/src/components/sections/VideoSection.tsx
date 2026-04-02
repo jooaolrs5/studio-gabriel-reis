@@ -34,6 +34,10 @@ export function VideoSection() {
                   allowFullScreen
                   className="w-full h-full"
                 />
+                {/* Cobre as infos do canal no topo */}
+                <div className="absolute top-0 left-0 right-0 h-14 bg-background pointer-events-none" />
+                {/* Cobre os controles/título na base */}
+                <div className="absolute bottom-0 left-0 right-0 h-14 bg-background pointer-events-none" />
               </div>
             </div>
           </motion.div>
