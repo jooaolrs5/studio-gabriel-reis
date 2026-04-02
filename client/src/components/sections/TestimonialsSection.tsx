@@ -70,8 +70,11 @@ export function TestimonialsSection() {
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
             Quem treinou aqui<br /><span className="text-primary">conta o que viveu</span>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-secondary-foreground max-w-lg mx-auto mb-6">
+          <motion.p variants={fadeUp} className="text-secondary-foreground max-w-lg mx-auto mb-3">
             Resultados reais de pessoas que escolheram um método diferente.
+          </motion.p>
+          <motion.p variants={fadeUp} className="text-primary font-bold text-sm mb-6">
+            Pessoas que vivem o #PadrãoGR
           </motion.p>
 
           <motion.div variants={fadeUp}

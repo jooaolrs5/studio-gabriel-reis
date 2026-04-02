@@ -71,6 +71,17 @@ export function HeroSection() {
         </motion.div>
       </div>
 
+      {/* Assinatura #PadrãoGR */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-10 right-6 sm:right-12 text-right select-none pointer-events-none"
+      >
+        <span className="text-primary/30 text-xs font-bold tracking-[0.25em] uppercase block mb-0.5">método</span>
+        <span className="text-primary/60 font-black text-xl sm:text-2xl tracking-tight">#PadrãoGR</span>
+      </motion.div>
+
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-40">
         <motion.div
           animate={{ y: [0, 8, 0] }}

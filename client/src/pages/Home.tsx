@@ -5,6 +5,7 @@ import { VideoSection } from "@/components/sections/VideoSection";
 import { BeliefBreakSection } from "@/components/sections/BeliefBreakSection";
 import { PainSection } from "@/components/sections/PainSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
+import { PadraoGRSection } from "@/components/sections/PadraoGRSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -30,7 +31,10 @@ export default function Home() {
       <PainSection />
       <SolutionSection />
 
-      {/* 4. Autoridade — quem é Gabriel */}
+      {/* 4. Conceito #PadrãoGR */}
+      <PadraoGRSection />
+
+      {/* 5. Autoridade — quem é Gabriel */}
       <AboutSection />
 
       {/* 5. Método e processo */}
