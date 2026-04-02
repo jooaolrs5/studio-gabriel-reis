@@ -7,14 +7,21 @@ import { Label } from "@/components/shared/Label";
 import { fadeUp } from "@/components/shared/motion";
 import { WaButton, WaIcon } from "@/components/shared/WaButton";
 
-// Preços Small Group (Cohama) por período
-const smallGroup = {
+// Small Group Cohama — preços por período
+const sgCohama = {
   essencial: { mensal: 419.90, trimestral: 389.90, semestral: 349.90, anual: 329.90 },
   intensivo:  { mensal: 519.90, trimestral: 489.90, semestral: 449.90, anual: 429.90 },
   performance:{ mensal: 619.90, trimestral: 589.90, semestral: 549.90, anual: 529.90 },
 };
 
-// Plano Prime (Cohama) — preços mensais fixos
+// Small Group Santa Cruz — preços mensais
+const sgSantaCruz = {
+  mensal: 150.00,
+  trimestral: 125.00,
+  anual: 100.00,
+};
+
+// Prime — só na Cohama, preços mensais fixos por frequência
 const prime = {
   "2x": 560.00,
   "3x": 840.00,
@@ -22,18 +29,13 @@ const prime = {
   "5x": 1400.00,
 };
 
-const santaCruz = {
-  mensal: 150.00,
-  trimestral: 125.00,
-  anual: 100.00,
-};
-
 function fmt(v: number) {
   return v.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
 }
 
-type Period = "mensal" | "trimestral" | "semestral" | "anual";
-type Unit   = "smallgroup" | "prime" | "santacruz";
+type Plan      = "smallgroup" | "prime";
+type SGUnit    = "cohama" | "santacruz";
+type Period    = "mensal" | "trimestral" | "semestral" | "anual";
 
 const periods: { key: Period; label: string; note: string }[] = [
   { key: "mensal",     label: "Mensal",     note: "sem fidelidade" },
@@ -42,7 +44,7 @@ const periods: { key: Period; label: string; note: string }[] = [
   { key: "anual",      label: "Anual",      note: "12 meses — maior economia" },
 ];
 
-const sgLevels = [
+const sgCohamaLevels = [
   {
     key:   "essencial" as const,
     name:  "Acompanhamento Essencial",
@@ -84,6 +86,12 @@ const sgLevels = [
   },
 ];
 
+const sgSCLevels = [
+  { key: "mensal" as const,     note: "sem fidelidade", highlight: false },
+  { key: "trimestral" as const, note: "3 meses",         highlight: true  },
+  { key: "anual" as const,      note: "12 meses",        highlight: false },
+];
+
 const primeLevels: { key: keyof typeof prime; freq: string; highlight: boolean }[] = [
   { key: "2x", freq: "2 vezes na semana", highlight: false },
   { key: "3x", freq: "3 vezes na semana", highlight: true  },
@@ -98,14 +106,9 @@ const primeItems = [
   "Aula diagnóstica inclusa",
 ];
 
-const scLevels = [
-  { key: "mensal" as const,     name: "Acompanhamento Mensal",     note: "sem fidelidade", highlight: false },
-  { key: "trimestral" as const, name: "Acompanhamento Trimestral", note: "3 meses",         highlight: true  },
-  { key: "anual" as const,      name: "Acompanhamento Anual",      note: "12 meses",        highlight: false },
-];
-
 export function PricingSection() {
-  const [unit, setUnit]     = useState<Unit>("smallgroup");
+  const [plan, setPlan]     = useState<Plan>("smallgroup");
+  const [sgUnit, setSgUnit] = useState<SGUnit>("cohama");
   const [period, setPeriod] = useState<Period>("mensal");
 
   return (
@@ -142,55 +145,70 @@ export function PricingSection() {
           </motion.div>
         </AnimatedSection>
 
-        {/* Switcher */}
+        {/* Seletor de plano principal */}
         <AnimatedSection>
-          <motion.div variants={fadeUp} className="flex flex-col items-center gap-3 mb-10">
+          <motion.div variants={fadeUp} className="flex flex-col items-center gap-4 mb-10">
+
             <div className="inline-flex bg-secondary rounded-xl p-1 gap-1">
-              {/* Cohama: Small Group */}
               <button
-                onClick={() => setUnit("smallgroup")}
-                className={`px-5 py-2.5 rounded-lg text-sm font-bold transition-all ${unit === "smallgroup" ? "bg-primary text-primary-foreground shadow" : "text-secondary-foreground hover:text-foreground"}`}
+                onClick={() => setPlan("smallgroup")}
+                className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${plan === "smallgroup" ? "bg-primary text-primary-foreground shadow" : "text-secondary-foreground hover:text-foreground"}`}
               >
                 Small Group
               </button>
-
-              {/* Cohama: Prime */}
               <button
-                onClick={() => setUnit("prime")}
-                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-bold transition-all ${unit === "prime" ? "bg-primary text-primary-foreground shadow" : "text-secondary-foreground hover:text-foreground"}`}
+                onClick={() => setPlan("prime")}
+                className={`flex items-center gap-1.5 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${plan === "prime" ? "bg-primary text-primary-foreground shadow" : "text-secondary-foreground hover:text-foreground"}`}
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                Prime
-              </button>
-
-              {/* Separador */}
-              <div className="w-px bg-border/60 mx-1 self-stretch" />
-
-              {/* Santa Cruz */}
-              <button
-                onClick={() => setUnit("santacruz")}
-                className={`px-5 py-2.5 rounded-lg text-sm font-bold transition-all ${unit === "santacruz" ? "bg-primary text-primary-foreground shadow" : "text-secondary-foreground hover:text-foreground"}`}
-              >
-                Santa Cruz
+                <Sparkles className="w-3.5 h-3.5" /> Prime
               </button>
             </div>
 
-            {/* Indicador de unidade */}
-            <p className="text-xs text-secondary-foreground/60">
-              {unit === "santacruz"
-                ? "Unidade Santa Cruz"
-                : "Unidade Cohama · " + (unit === "prime" ? "Plano Prime" : "Small Group")}
-            </p>
+            {/* Sub-seletor de unidade — apenas para Small Group */}
+            <AnimatePresence mode="wait">
+              {plan === "smallgroup" && (
+                <motion.div
+                  key="sg-unit"
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.18 }}
+                  className="inline-flex rounded-lg border border-border overflow-hidden"
+                >
+                  {(["cohama", "santacruz"] as SGUnit[]).map((u) => (
+                    <button
+                      key={u}
+                      onClick={() => setSgUnit(u)}
+                      className={`px-5 py-1.5 text-xs font-bold transition-all ${sgUnit === u ? "bg-primary/15 text-primary" : "text-secondary-foreground hover:text-foreground"}`}
+                    >
+                      {u === "cohama" ? "Cohama" : "Santa Cruz"}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+              {plan === "prime" && (
+                <motion.p
+                  key="prime-note"
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.18 }}
+                  className="text-xs text-secondary-foreground/60"
+                >
+                  Exclusivo · Unidade Cohama
+                </motion.p>
+              )}
+            </AnimatePresence>
+
           </motion.div>
         </AnimatedSection>
 
         <AnimatePresence mode="wait">
 
-          {/* ── SMALL GROUP ── */}
-          {unit === "smallgroup" && (
-            <motion.div key="smallgroup" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }}>
+          {/* ── SMALL GROUP · COHAMA ── */}
+          {plan === "smallgroup" && sgUnit === "cohama" && (
+            <motion.div key="sg-cohama" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }}>
 
-              {/* Seletor de período */}
               <div className="flex flex-wrap justify-center gap-2 mb-10">
                 {periods.map(({ key, label, note }) => (
                   <button
@@ -204,9 +222,8 @@ export function PricingSection() {
                 ))}
               </div>
 
-              {/* Cards */}
               <div className="grid md:grid-cols-3 gap-6 mb-4">
-                {sgLevels.map(({ key, name, freq, desc, items, highlight }) => (
+                {sgCohamaLevels.map(({ key, name, freq, desc, items, highlight }) => (
                   <AnimatedSection key={key}>
                     <motion.div
                       variants={fadeUp}
@@ -232,9 +249,9 @@ export function PricingSection() {
                       </ul>
                       <div className="pt-2 border-t border-border">
                         <p className="text-xs text-secondary-foreground mb-1">Investimento mensal</p>
-                        <p className="text-2xl font-black">R$ {fmt(smallGroup[key][period])}<span className="text-sm font-normal text-secondary-foreground">/mês</span></p>
+                        <p className="text-2xl font-black">R$ {fmt(sgCohama[key][period])}<span className="text-sm font-normal text-secondary-foreground">/mês</span></p>
                         {period !== "mensal" && (
-                          <p className="text-xs text-secondary-foreground/60 mt-0.5">Sem fidelidade: R$ {fmt(smallGroup[key].mensal)}/mês</p>
+                          <p className="text-xs text-secondary-foreground/60 mt-0.5">Sem fidelidade: R$ {fmt(sgCohama[key].mensal)}/mês</p>
                         )}
                         {period === "mensal" && (
                           <p className="text-xs text-secondary-foreground/60 mt-0.5">+ R$ 49,90 de adesão</p>
@@ -259,8 +276,50 @@ export function PricingSection() {
             </motion.div>
           )}
 
-          {/* ── PRIME ── */}
-          {unit === "prime" && (
+          {/* ── SMALL GROUP · SANTA CRUZ ── */}
+          {plan === "smallgroup" && sgUnit === "santacruz" && (
+            <motion.div key="sg-sc" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }}>
+              <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-4">
+                {sgSCLevels.map(({ key, note, highlight }) => (
+                  <AnimatedSection key={key}>
+                    <motion.div
+                      variants={fadeUp}
+                      className={`relative p-6 sm:p-8 rounded-2xl border flex flex-col gap-5 h-full transition-all ${highlight ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/30"}`}
+                    >
+                      {highlight && (
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-0.5 bg-primary text-primary-foreground text-xs font-black rounded-full whitespace-nowrap">
+                          Mais escolhido
+                        </div>
+                      )}
+                      <div>
+                        <p className="text-xs font-bold tracking-widest text-primary uppercase mb-1">{note}</p>
+                        <h3 className="text-xl font-black leading-tight capitalize">Acompanhamento {key}</h3>
+                      </div>
+                      <div className="flex-1" />
+                      <div className="pt-2 border-t border-border">
+                        <p className="text-xs text-secondary-foreground mb-1">Investimento mensal</p>
+                        <p className="text-2xl font-black">R$ {fmt(sgSantaCruz[key])}<span className="text-sm font-normal text-secondary-foreground">/mês</span></p>
+                      </div>
+                      <a
+                        href={WA_SC}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-full h-11 rounded-lg text-sm font-bold inline-flex items-center justify-center gap-2 transition-all ${highlight ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"}`}
+                      >
+                        <WaIcon size={4} /> Agendar aula diagnóstica
+                      </a>
+                    </motion.div>
+                  </AnimatedSection>
+                ))}
+              </div>
+              <p className="text-center text-xs text-secondary-foreground mt-6">
+                Aceita <strong className="text-foreground">Visa, Mastercard, Hipercard e Elo</strong>
+              </p>
+            </motion.div>
+          )}
+
+          {/* ── PRIME · COHAMA ── */}
+          {plan === "prime" && (
             <motion.div key="prime" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }}>
 
               <div className="text-center mb-10">
@@ -273,7 +332,6 @@ export function PricingSection() {
                 </p>
               </div>
 
-              {/* Cards 2×2 */}
               <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-4">
                 {primeLevels.map(({ key, freq, highlight }) => (
                   <AnimatedSection key={key}>
@@ -317,49 +375,6 @@ export function PricingSection() {
 
               <p className="text-center text-xs text-secondary-foreground mt-6">
                 Aceita <strong className="text-foreground">Visa, Mastercard, Hipercard e Elo</strong> · Aula diagnóstica: <strong className="text-foreground">R$ 100,00</strong>
-              </p>
-            </motion.div>
-          )}
-
-          {/* ── SANTA CRUZ ── */}
-          {unit === "santacruz" && (
-            <motion.div key="santacruz" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }}>
-              <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-4">
-                {scLevels.map(({ key, name, note, highlight }) => (
-                  <AnimatedSection key={key}>
-                    <motion.div
-                      variants={fadeUp}
-                      className={`relative p-6 sm:p-8 rounded-2xl border flex flex-col gap-5 h-full transition-all ${highlight ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/30"}`}
-                    >
-                      {highlight && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-0.5 bg-primary text-primary-foreground text-xs font-black rounded-full whitespace-nowrap">
-                          Mais escolhido
-                        </div>
-                      )}
-                      <div>
-                        <p className="text-xs font-bold tracking-widest text-primary uppercase mb-1">{note}</p>
-                        <h3 className="text-xl font-black leading-tight">{name}</h3>
-                      </div>
-                      <div className="flex-1" />
-                      <div className="pt-2 border-t border-border">
-                        <p className="text-xs text-secondary-foreground mb-1">Investimento mensal</p>
-                        <p className="text-2xl font-black">R$ {fmt(santaCruz[key])}<span className="text-sm font-normal text-secondary-foreground">/mês</span></p>
-                      </div>
-                      <a
-                        href={WA_SC}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`w-full h-11 rounded-lg text-sm font-bold inline-flex items-center justify-center gap-2 transition-all ${highlight ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"}`}
-                      >
-                        <WaIcon size={4} /> Agendar aula diagnóstica
-                      </a>
-                    </motion.div>
-                  </AnimatedSection>
-                ))}
-              </div>
-
-              <p className="text-center text-xs text-secondary-foreground mt-6">
-                Aceita <strong className="text-foreground">Visa, Mastercard, Hipercard e Elo</strong>
               </p>
             </motion.div>
           )}
