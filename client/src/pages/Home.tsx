@@ -6,7 +6,7 @@ import { PainSection } from "@/components/sections/PainSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { AuthoritySection } from "@/components/sections/AuthoritySection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PricingSection } from "@/components/sections/PricingSection";
@@ -24,7 +24,7 @@ export default function Home() {
       <SolutionSection />
       <DifferentialsSection />
       <ProcessSection />
-      <AuthoritySection />
+      <AboutSection />
       <TestimonialsSection />
       <Testimonials />
       <PricingSection />
