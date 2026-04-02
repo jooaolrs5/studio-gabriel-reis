@@ -1,43 +1,56 @@
-import { motion } from "framer-motion";
-import { WA } from "@/lib/constants";
-import { WaIcon } from "@/components/shared/WaButton";
 import { NavBar } from "@/components/sections/NavBar";
+import { WhatsAppFloat } from "@/components/sections/WhatsAppFloat";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { BeliefSection } from "@/components/sections/BeliefSection";
+import { VideoSection } from "@/components/sections/VideoSection";
+import { BeliefBreakSection } from "@/components/sections/BeliefBreakSection";
+import { PainSection } from "@/components/sections/PainSection";
+import { SolutionSection } from "@/components/sections/SolutionSection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { ForWhomSection } from "@/components/sections/ForWhomSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { CtaSection } from "@/components/sections/CtaSection";
+import { PricingSection } from "@/components/sections/PricingSection";
+import { LocationSection } from "@/components/sections/LocationSection";
+import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <NavBar />
-      <HeroSection />
-      <StatsSection />
-      <BeliefSection />
-      <AboutSection />
-      <ForWhomSection />
-      <DifferentialsSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <CtaSection />
-      <FooterSection />
 
-      {/* WhatsApp flutuante */}
-      <motion.a
-        href={WA} target="_blank" rel="noopener noreferrer"
-        initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2, type: "spring" }}
-        whileHover={{ scale: 1.1 }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-primary hover:bg-primary/90 text-white rounded-full flex items-center justify-center shadow-2xl shadow-primary/30 z-50 transition-colors"
-        title="Falar no WhatsApp"
-      >
-        <WaIcon size={7} />
-      </motion.a>
+      {/* 1. Impacto */}
+      <HeroSection />
+
+      {/* 2. Prova visual — o ambiente */}
+      <VideoSection />
+
+      {/* 3. Quebra de crença + dor + solução */}
+      <BeliefBreakSection />
+      <PainSection />
+      <SolutionSection />
+
+      {/* 4. Autoridade — quem é Gabriel */}
+      <AboutSection />
+
+      {/* 5. Método e processo */}
+      <DifferentialsSection />
+      <ProcessSection />
+
+      {/* 6. Prova social */}
+      <TestimonialsSection />
+
+      {/* 7. Oferta */}
+      <PricingSection />
+
+      {/* 8. Logística */}
+      <LocationSection />
+
+      {/* 9. Fechamento */}
+      <FinalCTASection />
+
+      <FooterSection />
+      <WhatsAppFloat />
     </div>
   );
 }

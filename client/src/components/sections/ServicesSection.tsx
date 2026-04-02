@@ -40,7 +40,7 @@ export function ServicesSection() {
           {services.map(({ n, title, sub, desc, items, highlight }) => (
             <AnimatedSection key={n}>
               <motion.div variants={fadeUp}
-                className={`relative p-8 rounded-2xl border h-full flex flex-col transition-all duration-300 ${highlight ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/40"}`}>
+                className={`relative p-5 sm:p-8 rounded-2xl border h-full flex flex-col transition-all duration-300 ${highlight ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/40"}`}>
                 {highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-black rounded-full tracking-widest uppercase whitespace-nowrap">
                     Mais Procurado
@@ -59,7 +59,7 @@ export function ServicesSection() {
                   ))}
                 </ul>
                 <a href={WA} target="_blank" rel="noopener noreferrer"
-                  className={`w-full h-12 rounded-lg font-bold inline-flex items-center justify-center text-sm transition-all gap-2 ${highlight ? "bg-primary hover:bg-primary/90 text-white" : "border border-primary/30 hover:border-primary text-primary hover:bg-primary/10"}`}>
+                  className={`w-full h-12 rounded-lg font-bold inline-flex items-center justify-center text-sm transition-all gap-2 ${highlight ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "border border-primary/30 hover:border-primary text-primary hover:bg-primary/10"}`}>
                   <WaIcon size={4} /> Quero começar
                 </a>
               </motion.div>
