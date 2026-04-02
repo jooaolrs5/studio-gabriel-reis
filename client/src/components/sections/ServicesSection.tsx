@@ -40,7 +40,7 @@ export function ServicesSection() {
           {services.map(({ n, title, sub, desc, items, highlight }) => (
             <AnimatedSection key={n}>
               <motion.div variants={fadeUp}
-                className={`relative p-8 rounded-2xl border h-full flex flex-col transition-all duration-300 ${highlight ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/40"}`}>
+                className={`relative p-5 sm:p-8 rounded-2xl border h-full flex flex-col transition-all duration-300 ${highlight ? "border-primary bg-primary/5" : "border-border bg-card hover:border-primary/40"}`}>
                 {highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-black rounded-full tracking-widest uppercase whitespace-nowrap">
                     Mais Procurado
