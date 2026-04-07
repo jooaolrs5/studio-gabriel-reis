@@ -60,7 +60,7 @@ export function NavBar() {
             alt="Studio Gabriel Reis"
             width={128}
             height={64}
-            className="h-14 md:h-20 w-auto object-contain"
+            className="h-11 md:h-14 w-auto object-contain"
             priority
           />
         </a>

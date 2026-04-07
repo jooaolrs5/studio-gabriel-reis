@@ -78,18 +78,18 @@ export function ProcessSection() {
           {/* Linha vertical central */}
           <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-border" />
 
-          <div className="space-y-0">
+          <div className="space-y-6">
             {steps.map(({ n, title, desc, detail }, i) => {
               const isLeft = i % 2 === 0;
               return (
                 <AnimatedSection key={n}>
                   <motion.div
                     variants={fadeUp}
-                    className="grid grid-cols-2 gap-16 items-center py-4"
+                    className="relative grid grid-cols-2 items-center py-4"
                   >
-                    {/* Card lado esquerdo ou direito */}
-                    <div className={isLeft ? "order-1" : "order-3"}>
-                      <div className={`p-8 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all group ${isLeft ? "text-right" : "text-left"}`}>
+                    {/* Card — alterna lado */}
+                    <div className={isLeft ? "pr-20" : "col-start-2 pl-20"}>
+                      <div className={`p-8 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all ${isLeft ? "text-right" : "text-left"}`}>
                         <div className={`flex items-center gap-3 mb-4 ${isLeft ? "justify-end" : "justify-start"}`}>
                           <span className="text-xs font-bold text-primary/70 bg-primary/5 border border-primary/15 px-3 py-1 rounded-full">
                             {detail}
@@ -100,15 +100,10 @@ export function ProcessSection() {
                       </div>
                     </div>
 
-                    {/* Número central */}
-                    <div className="order-2 flex items-center justify-center relative">
-                      <div className="w-14 h-14 rounded-full bg-background border-2 border-primary flex items-center justify-center z-10 relative">
-                        <span className="text-primary font-black text-sm">{n}</span>
-                      </div>
+                    {/* Número — absolutamente centrado na linha */}
+                    <div className="absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-background border-2 border-primary flex items-center justify-center z-10">
+                      <span className="text-primary font-black text-sm">{n}</span>
                     </div>
-
-                    {/* Espaço vazio do outro lado */}
-                    <div className={isLeft ? "order-3" : "order-1"} />
                   </motion.div>
                 </AnimatedSection>
               );
