@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /images/logo-dark.png
-
-Sitemap: https://studiogabrielreis.com.br/sitemap.xml
