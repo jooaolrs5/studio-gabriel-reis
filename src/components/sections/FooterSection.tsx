@@ -73,7 +73,15 @@ export function FooterSection() {
       </div>
 
       <div className="container border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
-        <p className="text-xs text-muted-foreground">© 2026 Studio Gabriel Reis – Alta Performance e Prevenção de Lesões. Todos os direitos reservados.</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-muted-foreground">© 2026 Studio Gabriel Reis – Alta Performance e Prevenção de Lesões. Todos os direitos reservados.</p>
+          <p className="text-xs text-muted-foreground">
+            Site desenvolvido por{' '}
+            <a href="https://joaosilvacreative.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              João Silva Creative
+            </a>
+          </p>
+        </div>
         <p className="text-xs text-muted-foreground">Cohama, São Luís – MA</p>
       </div>
     </footer>
